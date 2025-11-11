@@ -1,6 +1,7 @@
 #include "stack.h"
-
+#include <stdio.h>
 #include <stdlib.h>
+
 struct stack {
   int *data; //Puntero al array
   size_t size;
@@ -33,6 +34,9 @@ void stack_destroy(stack_t* s)
 {
   if (!s)
     return;
+  free (s -> data);
+  free (s);
+  s = NULL;
 }
 
 int stack_pop(stack_t* s, int* out){
@@ -62,4 +66,8 @@ bool stack_is_empty(const stack_t* s){
 void stack_print(const stack_t* s) {
   if (!s)
     return;
+
+  for (int i = 0; i < s -> size; i++) {
+    printf ("%d\n", s -> (data + i));
+  }
 }
