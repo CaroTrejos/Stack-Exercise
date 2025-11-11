@@ -22,6 +22,7 @@ stack_t * stack_create(size_t initial_cap) {
   return s;
 }
 
+
 int stack_push(stack_t * s, int value) {
   if (!s) return -1; //Pointer guards!
   if (s->size == s->cap) return -1;
@@ -45,12 +46,6 @@ int stack_pop(stack_t* s, int* out){
   return 0;
 }
 
-void stack_top(const stack_t* s, int* out){
-  if (!s || !out)
-    return;
-  return;
-}
-
 size_t stack_size(const stack_t* s){
   if (!s)
     return -1;
@@ -67,7 +62,13 @@ void stack_print(const stack_t* s) {
   if (!s)
     return;
 
-  for (int i = 0; i < s -> size; i++) {
-    printf ("%d\n", s -> (data + i));
+					
+int stack_top(const stack_t* s, int* out) {
+  if (s==NULL || out==NULL) {
+    return -1;
   }
-}
+  if (out!=NULL) {
+    *out = s->data + s->size -1;
+    return 0
+  }
+
