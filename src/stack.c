@@ -65,4 +65,5 @@ bool stack_is_empty(const stack_t* s){
 void stack_print(const stack_t* s) {
   if (!s)
     return;
-}
+
+
