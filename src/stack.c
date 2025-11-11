@@ -19,3 +19,12 @@ stack_t * stack_create(size_t initial_cap) {
   s->cap = initial_cap;
   return s;
 }
+
+
+
+size_t stack_size(const stack_t* s){
+	if (!s){
+		return 0;
+	}	
+	return s->size;
+}
