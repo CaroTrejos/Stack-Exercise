@@ -41,10 +41,10 @@ int stack_pop(stack_t* s, int* out){
   return 0;
 }
 
-int stack_top(const stack_t* s, int* out){
+void stack_top(const stack_t* s, int* out){
   if (!s || !out)
-    return -1;
-  return 0;
+    return;
+  return;
 }
 
 size_t stack_size(const stack_t* s){

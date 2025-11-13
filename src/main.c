@@ -35,11 +35,11 @@ int main(void){
     }
 
     /* top */
-    if (line[0]=='3' || line[0]=='t'){
+    /*if (line[0]=='3' || line[0]=='t'){
       int v;
       if (stack_top(s, &v) != 0) puts("(empty)"); else printf("%d\n", v);
       continue;
-    }
+    }*/
 
     /* size */
     if (line[0]=='4' || line[0]=='s'){
