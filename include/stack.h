@@ -84,7 +84,7 @@ int stack_pop(stack_t* s, int* out);
  * @retval 0 Operación exitosa; si `out != NULL`, se escribe el valor.
  * @retval -1 Error: pila vacía o `s == NULL`.
  */
-int stack_top(const stack_t* s, int* out);
+void stack_top(const stack_t* s, int* out);
 
 /**
  * @brief Devuelve el número de elementos actualmente en la pila.
