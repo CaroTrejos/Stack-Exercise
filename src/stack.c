@@ -2,9 +2,9 @@
 
 #include <stdlib.h>
 struct stack {
-  int *data; //Puntero al array
+  int *data; //Puntero al array [,,,,]
   size_t size;
-  size_t cap;
+  size_t cap; //Capacidad maxima del array 0-50
 };
 
 stack_t * stack_create(size_t initial_cap) {
@@ -36,8 +36,15 @@ void stack_destroy(stack_t* s)
 }
 
 int stack_pop(stack_t* s, int* out){
-  if (!s || !out)
+  
+  if (!s || s->size == 0) // si la pila no existia o si estaba vacia
     return -1;
+
+  if (!out)
+    s->size -= 1;
+    return 0;
+  else
+    *out = s->data[s->size - 1];
   return 0;
 }
 
@@ -54,9 +61,9 @@ size_t stack_size(const stack_t* s){
 }
 
 bool stack_is_empty(const stack_t* s){
-  if (!s)
-    return false;
-  return true;
+  if (!s) // null o 0 
+    return true;
+  return false;
 }
 
 void stack_print(const stack_t* s) {
