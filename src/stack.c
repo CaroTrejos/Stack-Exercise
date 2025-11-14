@@ -1,4 +1,3 @@
-#include "stack.h"
 
 #include <stdlib.h>
 struct stack {
@@ -29,10 +28,10 @@ int stack_push(stack_t * s, int value) {
   return 0;
 }
 
-void stack_destroy(stack_t* s)
+int stack_destroy(stack_t* s)
 {
   if (!s)
-    return;
+    return -1;
 }
 
 int stack_pop(stack_t* s, int* out){
@@ -59,7 +58,7 @@ bool stack_is_empty(const stack_t* s){
   return true;
 }
 
-void stack_print(const stack_t* s) {
+int stack_print(const stack_t* s) {
   if (!s)
-    return;
+    return 1;
 }
